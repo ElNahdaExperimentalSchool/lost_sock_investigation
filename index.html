@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lost Sock Investigation Bureau</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #708090, #2F4F4F);
+            color: #F5F5F5;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .case-file {
+            background: #FFFACD;
+            color: #2F4F4F;
+            border: 2px solid #8B4513;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .classified-stamp {
+            color: #DC143C;
+            font-weight: bold;
+            transform: rotate(-15deg);
+            font-size: 24px;
+            position: absolute;
+            right: 50px;
+            margin-top: -10px;
+        }
+        
+        .evidence-board {
+            background: #2F4F4F;
+            border: 3px solid #CD853F;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .red-string {
+            border-top: 2px dashed #FF0000;
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .suspect-photo {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background: #DCDCDC;
+            border: 2px solid #000;
+            margin: 10px;
+            text-align: center;
+            line-height: 80px;
+            font-size: 30px;
+        }
+        
+        .missing-poster {
+            background: #FFFF00;
+            color: #000;
+            padding: 15px;
+            border: 3px solid #FF0000;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>LOST SOCK INVESTIGATION BUREAU</h1>
+    <div class="classified-stamp">CLASSIFIED</div>
+
+    <div class="case-file">
+        <h2>CASE FILE #2024-SOX-001</h2>
+        <p><strong>Missing:</strong> One navy blue dress sock, size 10-12</p>
+        <p><strong>Last Seen:</strong> Entering washing machine with its partner</p>
+        <p><strong>Status:</strong> VANISHED WITHOUT A TRACE</p>
+        <p><strong>Lead Detective:</strong> Agent Laundry McSoapface</p>
+        <p><strong>Theory:</strong> Possible interdimensional portal in dryer drum</p>
+    </div>
+    <img style="margin-left: 400px;" src="data:image/webp;base64,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"
+        alt="">
+    <div class="evidence-board">
+        <h2>EVIDENCE BOARD</h2>
+        <div class="suspect-photo"></div>
+        <div class="red-string"></div>
+        <div class="suspect-photo"></div>
+        <div class="red-string"></div>
+        <div class="suspect-photo"></div>
+
+        <p><strong>SUSPECTS:</strong></p>
+        <p>• The Dryer Monster (Prime suspect)</p>
+        <p>• Sock-eating aliens</p>
+        <p>• The Bermuda Triangle of Laundry Rooms</p>
+        <p>• Time-traveling sock collectors</p>
+    </div>
+
+    <div class="missing-poster">
+        <h2>MISSING</h2>
+        <div style="font-size: 60px;"></div>
+        <p><strong>REWARD: $500</strong></p>
+        <p>If found, please contact LSIB immediately</p>
+        <p>DO NOT ATTEMPT TO APPREHEND ALONE</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-box">
+            <h3>42,573</h3>
+            <p>Socks Lost This Year</p>
+        </div>
+        <div class="stat-box">
+            <h3>3</h3>
+            <p>Socks Successfully Recovered</p>
+        </div>
+        <div class="stat-box">
+            <h3>99.99%</h3>
+            <p>Unsolved Cases</p>
+        </div>
+        <div class="stat-box">
+            <h3>24/7</h3>
+            <p>Investigation Hotline</p>
+        </div>
+    </div>
+
+    <div class="case-file">
+        <h3>REPORT A MISSING SOCK</h3>
+        <p>Call our hotline: 1-800-WHERE-SOX</p>
+        <p><strong>Information needed:</strong></p>
+        <p>• Color, size, and last known location</p>
+        <p>• Relationship status with other socks</p>
+        <p>• Any suspicious dryer activity</p>
+        <p>• Whether sock had any enemies</p>
+    </div>
+
+    <p style="text-align: center; font-style: italic; margin-top: 30px;">
+        "The truth is out there... somewhere in the lint trap."<br> - Detective Sock Mulder, LSIB
+    </p>
+</body>
+
+</html>
